@@ -5,33 +5,51 @@ Kupl-sample provides a set of cases using the kupl library .
 
 #### Software Architecture
 Each file has sevral sub-files, each sub-file have sample(include demo.cpp, makefile and readme)
+
 example:
+
     mt_gemm_fp64 GEMM
+
 memory:
+
     memcpy
+
     memcpy_async
+
     memcpy2d
+
     shm
+
 mma:
+
     mma_fp64
+
 mt:
+
     graph
+
     parallel_for
+
     queue
 
 #### Installation
 1.  Install the latest HPCKit
+
     Download：https://www.hikunpeng.com/developer/hpc/hpckit-download
+    
     Install：https://www.hikunpeng.com/document/detail/zh/kunpenghpcs/hpckit/instg/topic_0000001806090516.html
+
     Using guide：https://www.hikunpeng.com/document/detail/zh/kunpenghpcs/hpckit/devg/KunpengHPCKit_developer_003.html
+
 2.  Download this sample
 
 #### Instructions
 Change directory to the target sample
-    1. Follow the description of tile to build the code and run the demo
-    2. use makefile: command:
-        make: build the code
-        make run: run the demo
+
+    1. using the script command: `sh build.sh`
+
+    2. Follow the description of tile to build the code and run the demo,
+       or use the makefile which descripts in sub-folder readme file
 
 #### Contribution
 
