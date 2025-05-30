@@ -66,6 +66,7 @@ int main(int argc, char *argv[])
             ((int *)local_buffer)[i] = i;
         }
     }
+    MPI_Barrier(comm);
 
     // 所有其他进程获取进程 0 的 buffer，进行 memcpy
     if (world_rank != 0) {
