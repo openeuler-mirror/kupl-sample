@@ -1,5 +1,8 @@
 # kupl-sample
 
+### Notice
+The kupl-sample code repository has been migrated to Kunpeng HPC(https://gitee.com/kunpeng-hpc/kupl-sample)
+
 #### Description
 Kupl-sample provides a set of cases using the kupl library .
 

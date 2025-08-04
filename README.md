@@ -1,7 +1,10 @@
 # kupl-sample
 
+### 注意
+kupl-sample 代码仓已迁移至 Kunpeng-HPC(https://gitee.com/kunpeng-hpc/kupl-sample) 项目组下进行维护
+
 #### 介绍
-kupl_sample 提供了一组使用 kupl 库的用例
+kupl-sample 提供了一组使用 kupl 库的用例
 
 #### 软件架构
 每个大目录下有多个小目录，每个小目录中有对应的用例（demo 源码，makefile 文件，readme 说明）
@@ -33,7 +36,6 @@ mt: 众核并行
     queue 多队列编程
 
 #### 安装教程
-
 1.  安装最新的 HPCKit
 
     下载地址：https://www.hikunpeng.com/developer/hpc/hpckit-download
@@ -54,7 +56,6 @@ mt: 众核并行
         参考 sample 代码顶部的注释说明进行编译和执行，或参照具体的 sample 目录的 readme 进行编译和运行
 
 #### 使用说明
-
 1.  本用例仅供参考，具体使用方法请看 HPCKit 官方手册
 2.  本用例提供两种不同的编译/执行方式，用户可以自由选择
 
