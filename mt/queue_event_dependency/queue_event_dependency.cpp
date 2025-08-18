@@ -1,5 +1,5 @@
 /*
-    KUPL 多队列编程 Demo
+    KUPL 多队列事件编程 Demo
     编译命令: clang++ queue_event.cpp -o queue_event -lkupl
     运行命令: KUPL_SCHED_POLICY=mq KUPL_EXECUTOR_BACKEND=pthread ./queue_event
 */

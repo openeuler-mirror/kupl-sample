@@ -1,7 +1,7 @@
 #!/bin/bash
 # 假定机器共有32个numa节点
 
-# 在32个numa节点上分配大页
+# 在32个numa节点上分配大页，该行为需要root权限进行操作
 for i in {0..31}
 do
 echo 2000 >/sys/devices/system/node/node$i/hugepages/hugepages-2048kB/nr_hugepages

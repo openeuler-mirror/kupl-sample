@@ -1,7 +1,7 @@
 CC = clang++
 
-OBJS = parallel_for.cpp
-TARGET = parallel_for
+OBJS = parallel_for_1d.cpp
+TARGET = parallel_for_1d
 
 LDFLAGS = -lkupl
 

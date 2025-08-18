@@ -1,20 +1,20 @@
 CC = clang++
 
-OBJS = queue_event.cpp
-TARGET = queue_event
+OBJS = mma_bf16.cpp
+TARGET = mma_bf16
 
 LDFLAGS = -lkupl
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CC) -o $@ $^ $(LDFLAGS)
+	$(CC) -o $@ $^ -O3 $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 run: $(TARGET)
-	KUPL_SCHED_POLICY=mq KUPL_EXECUTOR_BACKEND=pthread ./$(TARGET)
+	./$(TARGET)
 
 clean:
 	rm -f $(TARGET)

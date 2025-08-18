@@ -1,17 +1,16 @@
 # kupl-sample
 
-### 注意
-kupl-sample 代码仓已迁移至 Kunpeng-HPC(https://gitee.com/kunpeng-hpc/kupl-sample) 项目组下进行维护
-
 #### 介绍
+
 kupl-sample 提供了一组使用 kupl 库的用例
 
 #### 软件架构
+
 每个大目录下有多个小目录，每个小目录中有对应的用例（demo 源码，makefile 文件，readme 说明）
 
 example：综合用例
 
-    mt_gemm_fp64 GEMM 算子开发实践
+    mt_gemm_fp64 fp64精度GEMM算子开发实践
 
 memory: 数据管理
 
@@ -21,21 +20,32 @@ memory: 数据管理
 
     memcpy2d 数据拷贝 2D
 
+    memcpy_between_numa_nodes 不同numa node之间高效拷贝实现
+
     shm 共享内存
+
+    hbw 高带宽内存
 
 mma: 矩阵编程
 
-    mma_fp64 矩阵乘加
+    mma_fp64 fp64精度矩阵乘加
+
+    mma_bf16 bf16精度矩阵乘加
 
 mt: 众核并行
 
     graph 计算机图编程
 
-    parallel_for 并行 for 循环
+    parallel_for_1d 并行 1d for 循环
+
+    parallel_for_3d 并行 3d for 循环
     
-    queue 多队列编程
+    queue_event_dependency 多队列事件编程
+
+    queue_submit 多队列并行编程
 
 #### 安装教程
+
 1.  安装最新的 HPCKit
 
     下载地址：https://www.hikunpeng.com/developer/hpc/hpckit-download
@@ -56,6 +66,7 @@ mt: 众核并行
         参考 sample 代码顶部的注释说明进行编译和执行，或参照具体的 sample 目录的 readme 进行编译和运行
 
 #### 使用说明
+
 1.  本用例仅供参考，具体使用方法请看 HPCKit 官方手册
 2.  本用例提供两种不同的编译/执行方式，用户可以自由选择
 
