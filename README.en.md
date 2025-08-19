@@ -1,17 +1,16 @@
 # kupl-sample
 
-### Notice
-The kupl-sample code repository has been migrated to Kunpeng HPC(https://gitee.com/kunpeng-hpc/kupl-sample)
-
 #### Description
+
 Kupl-sample provides a set of cases using the kupl library .
 
 #### Software Architecture
+
 Each file has sevral sub-files, each sub-file have sample(include demo.cpp, makefile and readme)
 
 example:
 
-    mt_gemm_fp64 GEMM
+    mt_gemm_fp64
 
 memory:
 
@@ -21,21 +20,32 @@ memory:
 
     memcpy2d
 
+    memcpy_between_numa_nodes
+
     shm
+
+    hbw
 
 mma:
 
     mma_fp64
 
+    mma_bf16
+
 mt:
 
     graph
 
-    parallel_for
+    parallel_for_1d
 
-    queue
+    parallel_for_3d
+
+    queue_event_dependency
+
+    queue_submit
 
 #### Installation
+
 1.  Install the latest HPCKit
 
     Download：https://www.hikunpeng.com/developer/hpc/hpckit-download
@@ -47,6 +57,7 @@ mt:
 2.  Download this sample
 
 #### Instructions
+
 Change directory to the target sample
 
     1. using the script command: `sh build.sh`

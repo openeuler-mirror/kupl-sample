@@ -1,5 +1,5 @@
 /*
-    KUPL MMA 矩阵编程 Demo
+    KUPL fp64精度MMA 矩阵编程 Demo
     编译命令: clang++ mma_fp64.cpp -o mma_fp64 -O3 -lkupl
     运行命令: ./mma_fp64
 */

@@ -1,7 +1,7 @@
-CC = mpicc
+CC = clang++
 
-OBJS = shm.cpp
-TARGET = shm
+OBJS = queue_event_dependency.cpp
+TARGET = queue_event_dependency
 
 LDFLAGS = -lkupl
 
@@ -14,7 +14,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 run: $(TARGET)
-	mpirun -np 2 -x UCX_TLS=sm ./$(TARGET)
+	KUPL_SCHED_POLICY=mq KUPL_EXECUTOR_BACKEND=pthread ./$(TARGET)
 
 clean:
 	rm -f $(TARGET)

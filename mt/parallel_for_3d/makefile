@@ -1,7 +1,7 @@
-CC = mpicc
+CC = clang++
 
-OBJS = shm.cpp
-TARGET = shm
+OBJS = parallel_for_3d.cpp
+TARGET = parallel_for_3d
 
 LDFLAGS = -lkupl
 
@@ -14,7 +14,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 run: $(TARGET)
-	mpirun -np 2 -x UCX_TLS=sm ./$(TARGET)
+	KUPL_EXECUTOR_BACKEND=pthread KUPL_SCHED_POLICY=sspe taskset -c 0-7 ./$(TARGET)
 
 clean:
 	rm -f $(TARGET)

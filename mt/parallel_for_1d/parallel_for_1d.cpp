@@ -1,5 +1,5 @@
 /*
-    KUPL parallel for 并行 Demo
+    KUPL parallel for 1d 并行 Demo
     编译命令: clang++ parallel_for.cpp -o parallel_for -lkupl
     运行命令: KUPL_EXECUTOR_BACKEND=pthread KUPL_SCHED_POLICY=sspe taskset -c 0-7 ./parallel_for
 */
@@ -16,6 +16,8 @@ int C[14];
 
 static inline void task_int_loop(kupl_nd_range_t *nd_range, void *args, int tid, int tnum)
 {
+    // 打印每个线程每次任务执行的for循环LOOP范围
+    printf("tid: %d\n--range: lower %zu upper %zu\n", tid, nd_range->nd_range[0].lower, nd_range->nd_range[0].upper);
     for (int i = nd_range->nd_range[0].lower; i < nd_range->nd_range[0].upper; i += nd_range->nd_range[0].step) {
         C[i] = A[i] + B[i];
     }
@@ -38,11 +40,11 @@ int main()
         .range = &range,
         .concurrency = NUM_THREADS,
         .egroup = eg,
-        .policy = KUPL_LOOP_POLICY_STATIC
+        .policy = KUPL_LOOP_POLICY_STATIC       // 此处可切换不同的策略，观察执行效果，对比static与dynamic策略的执行区别
     };
     kupl_parallel_for(&desc, task_int_loop, nullptr);
     for (int i = range.nd_range[0].lower; i < range.nd_range[0].upper; i += range.nd_range[0].step) {
-        printf("C[%d] result: %d\n ", i, C[i]);
+        printf("C[%d] result: %d\n", i, C[i]);
     }
     kupl_egroup_destroy(eg);
     return 0;
